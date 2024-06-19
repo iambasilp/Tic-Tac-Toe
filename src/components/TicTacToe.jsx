@@ -9,12 +9,12 @@ const TicTacToe = () => {
         </p>
       </div>
       <div className="tic-box">
-        <div className="box box-1"></div>
+        <div className="box box-1">X</div>
         <div className="box box-2"></div>
         <div className="box box-3"></div>
         <div className="box box-4"></div>
         <div className="box box-5"></div>
-        <div className="box box-6"></div>
+        <div className="box box-6">O</div>
         <div className="box box-7"></div>
         <div className="box box-8"></div>
         <div className="box box-9"></div>
