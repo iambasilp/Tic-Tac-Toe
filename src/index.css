@@ -14,3 +14,17 @@ a {
 ul {
   list-style: none;
 }
+.grid-wrappper{
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  gap: 1rem;
+
+}
+.grid-wrappper .grid{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

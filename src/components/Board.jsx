@@ -2,7 +2,7 @@ import Squre from "./Squre";
 
 const Board = () => {
   return (
-    <div>
+    <div className="grid-wrappper">
       <Squre value="1" clickHandle={() => onclick("sample value")} />
       <Squre value="2" clickHandle={() => onclick("sample value")} />
       <Squre value="3" clickHandle={() => onclick("sample value")} />
