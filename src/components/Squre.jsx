@@ -2,9 +2,9 @@
 
 const Squre = ({clickHandle,value}) => {
   return (
-    <div className="grid">
-      <button onClick={clickHandle}>{value}</button>
-    </div>
+    <button className="grid" onClick={clickHandle}>
+     {value}
+    </button>
   )
 }
 

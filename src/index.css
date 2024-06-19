@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: grey;
+  background-color: rgb(210, 210, 210);
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -13,6 +13,23 @@ a {
 }
 ul {
   list-style: none;
+}
+.game-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+.game-wrapper .game-content{
+  max-width: 500px;
+  margin-top: 3rem;
+}
+.game-wrapper .game-content h1{
+  font-size: 50px;
+}
+.game-wrapper .game-content p{
+  font-size: 15px;
 }
 .grid-wrappper{
   display: grid;
@@ -27,4 +44,12 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 40px;
+  border: none;
+  transition: all ease 0.2s;
+}
+.grid-wrappper .grid:active{
+  transform: scale(.9);
+  background-color: black;
+  color: white;
 }

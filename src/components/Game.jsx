@@ -2,7 +2,7 @@ import Board from "./Board";
 
 const Game = () => {
   return (
-    <div>
+    <div className="game-wrapper">
       <div className="game-content">
         <h1 className="game">Tic Tac Toe</h1>
         <p>
