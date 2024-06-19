@@ -66,7 +66,23 @@ ul {
   color: white;
 }
 .tic-wrapper .tic-box .box:active {
-  background-color: orangered;
   transform: scale(0.92);
   border-radius: 10%;
+}
+.tic-wrapper .tic-info{
+ margin-top: 20px;
+ display: flex;
+ gap: 5rem;
+  
+}
+.tic-info .player1{
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+}
+.tic-info .player2{
+  padding: 5px 10px;
+  background-color: greenyellow;
+  color: black;
+
 }

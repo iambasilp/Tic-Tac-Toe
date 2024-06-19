@@ -19,6 +19,10 @@ const TicTacToe = () => {
         <div className="box box-8"></div>
         <div className="box box-9"></div>
       </div>
+      <div className="tic-info">
+        <div className="player1">Player 1 : X</div>
+        <div className="player2">Player 2 : O</div>
+      </div>
     </div>
   );
 };
