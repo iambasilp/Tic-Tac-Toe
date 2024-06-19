@@ -1,9 +1,9 @@
-import TicTacToe from "./components/TicTacToe"
+import Game from "./components/Game"
 
 const App = () => {
   return (
     <div>
-      <TicTacToe /> 
+      <Game />
     </div>
   )
 }
