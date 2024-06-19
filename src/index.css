@@ -59,7 +59,8 @@ ul {
   background-color: orange;
 }
 .tic-wrapper .tic-box .box:hover{
-  background-color:greenyellow;
+  background-color:rgb(0, 0, 0);
+  color: white;
 }
 .tic-wrapper .tic-box .box:active{
   transform: scale(.92);
