@@ -1,8 +1,9 @@
 
 
-const Squre = ({clickHandle,value}) => {
+const Squre = ({value,onClick}) => {
+
   return (
-    <button className="grid" onClick={clickHandle}>
+    <button className="grid" onClick={onClick}>
      {value}
     </button>
   )

@@ -1,6 +1,20 @@
+import { useState } from "react";
 import Board from "./Board";
 
+
 const Game = () => {
+  const [board,setBoard] = useState([null,null,null,null,null,null,null,null,null]) 
+  const [flag,setFlag] = useState(true)
+
+  const 
+
+  function handleClick (index){
+    let boardCopy = [...board]
+    boardCopy[index] = flag?"X":"O";
+    setBoard(boardCopy)
+
+    setFlag(!flag)
+  }
   return (
     <div className="game-wrapper">
       <div className="game-content">
@@ -13,7 +27,7 @@ const Game = () => {
           winner
         </p>
       </div>
-      <Board />
+      <Board squres={board} onClick={handleClick} />
     </div>
   );
 };

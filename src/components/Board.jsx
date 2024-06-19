@@ -1,20 +1,18 @@
+import { useState } from "react";
 import Squre from "./Squre";
 
-const Board = () => {
+const Board = ({squres,onClick}) => {
+  console.log(squres);
  
   return (
     <div className="grid-wrappper">
-      <Squre value="1" clickHandle={()=>alert("hello")} />
-      <Squre value="2" clickHandle={()=>alert("hello")} />
-      <Squre value="3" clickHandle={()=>alert("hello")} />
-      <Squre value="4" clickHandle={()=>alert("hello")} />
-      <Squre value="5" clickHandle={()=>alert("hello")} />
-      <Squre value="6" clickHandle={()=>alert("hello")} />
-      <Squre value="7" clickHandle={()=>alert("hello")} />
-      <Squre value="8" clickHandle={()=>alert("hello")} />
-      <Squre value="9" clickHandle={()=>alert("hello")} />
+    {squres.map((squre,index)=>{
+      return <Squre value={squre} key={index} onClick={()=> onClick(index)} />
+    })}
     </div>
   );
 };
 
 export default Board;
+
+// here i got issue i have solved got bit time more that is map is defnitly need to return something hahahah...

@@ -24,13 +24,28 @@ ul {
 .game-wrapper .game-content{
   max-width: 500px;
   margin-top: 3rem;
+  padding: 0 20px;
 }
 .game-wrapper .game-content h1{
   font-size: 50px;
+  position: relative;
+}
+.game-wrapper .game-content h1::after{
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: black;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%);
 }
 .game-wrapper .game-content p{
-  font-size: 15px;
+  margin-top: 1.5rem;
+  font-size: 13px;
+  color: rgb(60, 78, 31);
 }
+
 .grid-wrappper{
   display: grid;
   grid-template-columns: 100px 100px 100px;
@@ -48,7 +63,7 @@ ul {
   border: none;
   transition: all ease 0.2s;
 }
-.grid-wrappper .grid:active{
+.grid-wrappper .grid:hover{
   transform: scale(.9);
   background-color: black;
   color: white;
