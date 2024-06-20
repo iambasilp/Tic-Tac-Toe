@@ -32,7 +32,7 @@ const Game = () => {
         </p>
       </div>
      <Board squres={board} onClick={handleClick} />
-     <p>{winner}</p>
+     <p className="info">{winner ? "Winner" + " " +  winner : "Next Player :" + " " + (flag ? "X" : "O") }</p>
     </div>
   );
 };
