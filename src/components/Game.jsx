@@ -5,7 +5,6 @@ import { calculateWinner } from "./calculateWinner";
 // overite we can not do when click
 
 const Game = () => {
-
   const [board, setBoard] = useState([
     null,
     null,
@@ -19,28 +18,27 @@ const Game = () => {
   ]);
   const [flag, setflag] = useState(true);
   let winner = calculateWinner(board);
-  const player1 = ["🍎","🚗","🌹"];
-  const player2 = ["🍌","🐝","🐥"]
+  const [player1,setPlayer1] = useState(["🍎", "🚗", "🌹"]);
+  const [player2,setPlayer2] = useState(["🍌", "🐝", "🐥"]);
 
-  function handlePlayer1(e){
-    setPlayer1()
-  }
-  function handlePlayer2(e){
-    console.log(e.target.value)
+  function handleplayer(e){
+     let value = e.target.value
+     let newArray =  player1.filter((item,i)=>{
+        return item[i] === value
+     })
+     console.log(newArray);
   }
 
   function handleClick(index) {
     let boardcopy = [...board];
-    if (boardcopy[index] || winner) 
-      return;
-    
-    boardcopy[index] = flag ? "X" : "O";
-
+    if (boardcopy[index] || winner) return;
+   
+     boardcopy[index] = flag ? player1 : player2;
     setBoard(boardcopy);
     setflag(!flag);
   }
-  let isDraw = board.every((item)=> item!=null)
-  console.log(isDraw);
+  let isDraw = board.every((item) => item != null);
+
 
   return (
     <div className="game">
@@ -54,29 +52,35 @@ const Game = () => {
           winner
         </p>
         <div className="select-choose">
-        <select name="" id="" className="select-chooseFirst" onChange={handlePlayer1}>
-         {player1.map((item,index)=>{
-          return <option key={index}>{item}</option>
-         })}
-        </select>
-        <select name="" id="" className="select-chooseSecond" onChange={handlePlayer2}>
-        {player2.map((item,index)=>{
-          return <option key={index}>{item}</option>
-         })}
-        </select>
+          <select name="" id="" className="select-chooseFirst" onChange={handleplayer}>
+            {player1.map((item, index) => {
+              return <option key={index} value={item}>{item}</option>;
+            })}
+          </select>
+          <select name="" id="" className="select-chooseSecond" onChange={handleplayer}>
+            {player2.map((item, index) => {
+              return <option key={index} value={item}>{item}</option>;
+            })}
+          </select>
         </div>
- 
       </div>
       <Board squres={board} onClick={handleClick} />
       <div className="info">
         <p className="player">
-           {winner
-            ? "Winner" + " " + winner 
-            : isDraw ? "Draw"
-            : "Next Player :" + " " + (flag ? "X" : "O")} 
-       
+          {winner
+            ? "Winner" + " " + winner
+            : isDraw
+            ? "Draw"
+            : "Next Player :" + " " + (flag ? "X" : "O")}
         </p>
-        <p onClick={()=>{setBoard([null,null,null,null,null,null,null,null,null])}} className="reset">Rest</p>
+        <p
+          onClick={() => {
+            setBoard([null, null, null, null, null, null, null, null, null]);
+          }}
+          className="reset"
+        >
+          Rest
+        </p>
       </div>
     </div>
   );
