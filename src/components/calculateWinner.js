@@ -1,4 +1,6 @@
+
 export function calculateWinner(squre){
+    console.log(squre);
    const line = [
     [0,1,2],
     [3,4,5],
@@ -12,6 +14,7 @@ export function calculateWinner(squre){
    for(let i=0 ; i<line.length;i++){
     const [a,b,c] = line[i]
     if(squre[a]&&squre[a] == squre[b]&&squre[a] == squre[c])
+       
     return squre[a]
    }
  return null

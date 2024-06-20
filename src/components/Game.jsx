@@ -18,6 +18,7 @@ const Game = () => {
   ]);
   const [flag, setflag] = useState(true);
   let winner = calculateWinner(board);
+  console.log(board)
   const [player1, setPlayer1] = useState(["🍎", "🚗", "🌹"]);
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
@@ -37,6 +38,7 @@ const Game = () => {
     if (boardcopy[index] || winner) return;
 
     boardcopy[index] = flag ? dataOne : dataTwo;
+    console.log(boardcopy[index]);
     setBoard(boardcopy);
     setflag(!flag);
   }
@@ -60,7 +62,7 @@ const Game = () => {
             className="select-chooseFirst"
             onChange={handleplayerOne}
           >
-            <option value="">Select</option>
+            <option value="">Player 1</option>
             {player1.map((item, index) => {
               return (
                 <option key={index} value={item}>
@@ -75,7 +77,7 @@ const Game = () => {
             className="select-chooseSecond"
             onChange={handleplayerTwo}
           >
-            <option value="">Select</option>
+            <option value="">Player 2</option>
             {player2.map((item, index) => {
               return (
                 <option key={index} value={item}>
