@@ -24,10 +24,12 @@ const Game = () => {
       return;
     
     boardcopy[index] = flag ? "X" : "O";
-    // if(winner || boardcopy[index])
+
     setBoard(boardcopy);
     setflag(!flag);
   }
+  let isDraw = board.every((item)=> item!=null)
+  console.log(isDraw);
   return (
     <div className="game">
       <div className="game-content">
@@ -43,9 +45,11 @@ const Game = () => {
       <Board squres={board} onClick={handleClick} />
       <div className="info">
         <p className="player">
-          {winner
-            ? "Winner" + " " + winner
-            : "Next Player :" + " " + (flag ? "X" : "O")}
+           {winner
+            ? "Winner" + " " + winner 
+            : isDraw ? "Draw"
+            : "Next Player :" + " " + (flag ? "X" : "O")} 
+       
         </p>
         <p onClick={()=>{setBoard([null,null,null,null,null,null,null,null,null])}} className="reset">Rest</p>
       </div>
