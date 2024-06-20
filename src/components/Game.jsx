@@ -23,6 +23,7 @@ const Game = () => {
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
   const [player2, setPlayer2] = useState(["🍌", "🐝", "🐥"]);
+  console.log(dataOne);
 
   function handleplayerOne(e) {
     let value = e.target.value;
@@ -70,6 +71,7 @@ const Game = () => {
                 </option>
               );
             })}
+          
           </select>
           <select
             name=""
@@ -95,7 +97,7 @@ const Game = () => {
             ? "Winner" + " " + winner
             : isDraw
             ? "Draw"
-            : "Next Player :" + " " + (flag ? dataOne : dataTwo)}
+            : "Next Player :" + " " + (flag ? dataOne  : dataTwo)}
         </p>
         <p
           onClick={() => {
@@ -109,5 +111,6 @@ const Game = () => {
     </div>
   );
 };
+// pointer when hover reset button
 
 export default Game;
