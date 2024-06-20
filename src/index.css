@@ -25,11 +25,22 @@ ul {
   text-align: center;
 }
 .game .info{
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2rem;
+  column-gap: 1rem;
+}
+.game .player{
  background-color:black;
  color: white;
  padding: 5px 10px;
- margin-top: 2rem;
  font-size: 1rem;
+}
+
+.game .reset{
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
 }
 .game-content{
   max-width: 500px;

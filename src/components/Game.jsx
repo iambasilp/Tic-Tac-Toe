@@ -4,20 +4,29 @@ import { calculateWinner } from "./calculateWinner";
 
 // overite we can not do when click
 
-
 const Game = () => {
-  const [board,setBoard] = useState([null,null,null,null,null,null,null,null,null])
-  const [flag,setflag] = useState(true)
-  let winner = calculateWinner(board)
-  function handleClick(index){
-    let boardcopy = [...board]
-    if(boardcopy[index] || winner){
-      return
+  const [board, setBoard] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
+  const [flag, setflag] = useState(true);
+  let winner = calculateWinner(board);
+  function handleClick(index) {
+    let boardcopy = [...board];
+    if (boardcopy[index] || winner) {
+      return;
     }
-    boardcopy[index] = flag?"X":"O";
+    boardcopy[index] = flag ? "X" : "O";
     // if(winner || boardcopy[index])
-    setBoard(boardcopy)
-    setflag(!flag)
+    setBoard(boardcopy);
+    setflag(!flag);
   }
   return (
     <div className="game">
@@ -31,8 +40,15 @@ const Game = () => {
           winner
         </p>
       </div>
-     <Board squres={board} onClick={handleClick} />
-     <p className="info">{winner ? "Winner" + " " +  winner : "Next Player :" + " " + (flag ? "X" : "O") }</p>
+      <Board squres={board} onClick={handleClick} />
+      <div className="info">
+        <p className="player">
+          {winner
+            ? "Winner" + " " + winner
+            : "Next Player :" + " " + (flag ? "X" : "O")}
+        </p>
+        <p onClick={()=>{setBoard([null,null,null,null,null,null,null,null,null])}} className="reset">Rest</p>
+      </div>
     </div>
   );
 };
