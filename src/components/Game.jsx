@@ -20,9 +20,9 @@ const Game = () => {
   let winner = calculateWinner(board);
   function handleClick(index) {
     let boardcopy = [...board];
-    if (boardcopy[index] || winner) {
+    if (boardcopy[index] || winner) 
       return;
-    }
+    
     boardcopy[index] = flag ? "X" : "O";
     // if(winner || boardcopy[index])
     setBoard(boardcopy);
