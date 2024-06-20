@@ -45,6 +45,16 @@ ul {
 .game-content{
   max-width: 500px;
 }
+.game-content .select-choose{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.game-content .select-chooseFirst,.select-chooseSecond{
+  font-size: 1rem;
+  padding: 3px 20px;
+}
 .game-content h1::after{
   content: "";
   width: 100px;
