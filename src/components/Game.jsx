@@ -20,8 +20,8 @@ const Game = () => {
   let winner = calculateWinner(board);
   console.log(board)
   const [player1, setPlayer1] = useState(["🍎", "🚗", "🌹"]);
-  const [dataOne, setDataOne] = useState([]);
-  const [dataTwo, setDataTwo] = useState([]);
+  const [dataOne, setDataOne] = useState(null);
+  const [dataTwo, setDataTwo] = useState(null);
   const [player2, setPlayer2] = useState(["🍌", "🐝", "🐥"]);
   console.log(dataOne);
 
