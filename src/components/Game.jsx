@@ -90,7 +90,7 @@ const Game = () => {
           </select>
         </div>
       </div>
-      <Board squres={board} onClick={handleClick} />
+      <Board squres={board} onClick={handleClick} winner={winner} isDraw={isDraw} flag={flag} dataOne={dataOne} dataTwo={dataTwo}/>
       <div className="info">
         <p className="player">
           {winner
@@ -99,14 +99,15 @@ const Game = () => {
             ? "Draw"
             : "Next Player :" + " " + (flag ? dataOne  : dataTwo)}
         </p>
-        <p
+        <a
           onClick={() => {
             setBoard([null, null, null, null, null, null, null, null, null]);
           }}
           className="reset"
         >
           Reset
-        </p>
+        </a>
+        
       </div>
     </div>
   );
