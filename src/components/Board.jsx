@@ -1,17 +1,11 @@
 import Squre from "./Squre"
 
-const Board = () => {
+const Board = ({squres,onClick}) => {
   return (
     <div className="game-board">
-      <Squre />
-      <Squre />
-      <Squre />
-      <Squre />
-      <Squre />
-      <Squre />
-      <Squre />
-      <Squre />
-      <Squre />
+     {squres.map((squre,index)=>{
+     return  <Squre  key={index} value={squre} onClick={()=>{onClick(index)}} />
+     })}
     </div>
   )
 }

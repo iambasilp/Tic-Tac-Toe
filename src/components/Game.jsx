@@ -1,9 +1,24 @@
+import { useState } from "react";
 import Board from "./Board";
+import { calculateWinner } from "./calculateWinner";
 
+// overite we can not do when click
 
 
 const Game = () => {
-
+  const [board,setBoard] = useState([null,null,null,null,null,null,null,null,null])
+  const [flag,setflag] = useState(true)
+  let winner = calculateWinner(board)
+  function handleClick(index){
+    let boardcopy = [...board]
+    if(boardcopy[index] || winner){
+      return
+    }
+    boardcopy[index] = flag?"X":"O";
+    // if(winner || boardcopy[index])
+    setBoard(boardcopy)
+    setflag(!flag)
+  }
   return (
     <div className="game">
       <div className="game-content">
@@ -16,8 +31,8 @@ const Game = () => {
           winner
         </p>
       </div>
-  
-     <Board />
+     <Board squres={board} onClick={handleClick} />
+     <p>{winner}</p>
     </div>
   );
 };
