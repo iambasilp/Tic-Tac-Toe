@@ -101,7 +101,7 @@ const Game = () => {
           }}
           className="reset"
         >
-          Rest
+          Reset
         </p>
       </div>
     </div>
