@@ -82,7 +82,7 @@ Make sure your code follows our standards and includes relevant tests.
 ## Screenshots
 
 ![Game Screenshot](/src//assets/screenshots/game.png)
-*Description of the screenshot.*
+
 
 ## Acknowledgements
 - **React:** For the user interface framework.
